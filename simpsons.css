@@ -1,0 +1,75 @@
+.exo {
+    font-family: "Exo 2", serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+  }
+  
+  body {background: #76baca !important;
+  }
+
+  #curtain-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+/* Left and right curtains */
+.curtain {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #a00000; /* Red curtain color */
+    z-index: 9999;
+}
+
+.curtain-left {
+    left: 0;
+}
+
+.curtain-right {
+    right: 0;
+}
+
+/* Animation for curtains */
+@keyframes pullCurtains {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.curtain-left.animate {
+    animation: pullCurtains 2s forwards;
+}
+
+.curtain-right.animate {
+    animation: pullCurtains 2s forwards;
+    animation-direction: reverse;
+}
+
+#curtain-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px 30px;
+    background-color: #ff5733;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+#curtain-button:hover {
+    background-color: #c0392b;
+}
